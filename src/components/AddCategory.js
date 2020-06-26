@@ -14,17 +14,18 @@ export const AddCategory = ({ setCategories }) => {
   );
 
   function handleChange({ target }) {
-    setValue(target.value?.trim());
+    setValue(target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!value) return;
+    const category = value.trim();
+    if (!category) return;
 
     setCategories(categories => {
-      if (!categories.includes(value)) {
+      if (!categories.includes(category)) {
         setValue('');
-        return [...categories, value];
+        return [...categories, category];
       }
       return categories;
     });
