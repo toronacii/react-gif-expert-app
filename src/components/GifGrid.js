@@ -9,7 +9,7 @@ export const GifGrid = ({ category }) => {
 
   return <>
     <h3 className="animate__animated animate__flash">{category}</h3>
-    { loading && <div className="animate__animated animate__flash">Cargando...</div> }
+    { loading && <p className="animate__animated animate__flash">Cargando...</p> }
     <div className="card-grid">
       {gifs.map(({ id, ...props }) => (
         <GifGridItem
